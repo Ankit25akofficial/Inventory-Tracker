@@ -1,18 +1,12 @@
-[phases.setup]
-nixPkgs = ["php81", "php81Extensions.gd", "php81Extensions.mbstring", "php81Extensions.pdo", "php81Extensions.pdo_mysql", "php81Extensions.tokenizer", "php81Extensions.xml", "php81Extensions.ctype", "php81Extensions.fileinfo", "php81Extensions.bcmath", "php81Extensions.zip", "nodePackages.npm"]
-
 [phases.install]
 cmds = [
-    "composer install --no-dev --optimize-autoloader --no-interaction",
-    "npm ci"
+    "composer install --no-dev --optimize-autoloader --no-interaction"
 ]
 
 [phases.build]
 cmds = [
-    "npm run build",
-    "php artisan config:cache",
-    "php artisan route:cache",
-    "php artisan view:cache"
+    "npm ci --no-audit",
+    "npm run build"
 ]
 
 [start]
