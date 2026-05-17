@@ -39,6 +39,9 @@
 - Supports three scan actions: **Check Info**, **Stock In**, **Stock Out**
 - Session stats (total scans / successful / failed)
 
+- <img width="1503" height="914" alt="image" src="https://github.com/user-attachments/assets/938122c0-274b-472d-8ba5-6b13702bafe4" />
+
+
 ### 📋 Inventory Management
 - View all stock levels across all products
 - Quick stock update with quantity and remarks
@@ -48,14 +51,22 @@
 ### 📈 Reports *(Admin only)*
 - Full inventory value report
 - Export to **PDF** (via DomPDF) and **Excel** (via Maatwebsite Excel)
-- Low stock alerts
+- Low stock alerts'
+- <img width="1907" height="904" alt="image" src="https://github.com/user-attachments/assets/d5d9fb29-51e0-4822-801f-e20b0cef2301" />
+
 
 ### 🖨️ QR Code Printing *(Admin only)*
 - Print-ready QR code sheets for all products
 - Individual QR download per product (SVG format)
 - QR codes encode direct product URLs for instant browser navigation
 
----
+### Products 
+<img width="1894" height="922" alt="image" src="https://github.com/user-attachments/assets/5d697937-d31e-40cf-86ae-92e208bbddb0" />
+
+### Inventory Management
+
+<img width="1462" height="905" alt="image" src="https://github.com/user-attachments/assets/49b42f6f-8317-42ed-a3ef-b1a9f8bfb124" />
+
 
 ## 🛠️ Tech Stack
 
