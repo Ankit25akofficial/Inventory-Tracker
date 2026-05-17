@@ -151,8 +151,8 @@ The app will be available at **http://localhost:8000**
 
 | Role | Email | Password |
 |------|-------|----------|
-| **Admin** | `ankitkumar252508@gmail.com` | `password` |
-| **Staff** | `staff@example.com` | `password` |
+| **Admin** | `...........@gmail.com` | `password` |
+| **Staff** | `..........@example.com` | `password` |
 
 > ⚠️ Change these credentials immediately in a production environment.
 
