@@ -24,6 +24,20 @@ fi
 
 echo "Connecting to DB: $DB_HOST:$DB_PORT/$DB_DATABASE as $DB_USERNAME"
 
+# Run migrations
 php artisan migrate --force
+
+# Auto-seed if no users exist (first deploy only)
+USER_COUNT=$(php artisan tinker --execute="echo \App\Models\User::count();" 2>/dev/null | grep -E '^[0-9]+$' | tail -1)
+echo "Current user count: $USER_COUNT"
+if [ -z "$USER_COUNT" ] || [ "$USER_COUNT" = "0" ]; then
+    echo "No users found - running database seeder..."
+    php artisan db:seed --force
+    echo "Seeding complete!"
+fi
+
+# Create storage symlink
 php artisan storage:link 2>/dev/null || true
+
+echo "Starting Laravel server on port ${PORT:-8080}..."
 php artisan serve --host=0.0.0.0 --port=${PORT:-8080}
