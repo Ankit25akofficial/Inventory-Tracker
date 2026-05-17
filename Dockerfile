@@ -2,7 +2,7 @@ FROM php:8.3-cli
 
 # Install system dependencies + PHP extensions
 RUN apt-get update && apt-get install -y \
-    git curl zip unzip \
+    git curl zip unzip dos2unix \
     libpng-dev libonig-dev libxml2-dev libzip-dev \
     && docker-php-ext-install \
         pdo_mysql mbstring bcmath gd zip exif pcntl xml \
@@ -24,8 +24,8 @@ RUN mkdir -p storage/framework/{sessions,views,cache,testing} \
              storage/logs bootstrap/cache \
     && chmod -R 777 storage bootstrap/cache
 
-# Make startup script executable
-RUN chmod +x start.sh
+# Fix Windows CRLF line endings and make executable
+RUN dos2unix start.sh && chmod +x start.sh
 
 EXPOSE 8080
 

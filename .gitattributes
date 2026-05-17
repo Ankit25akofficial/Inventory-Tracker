@@ -1,10 +1,6 @@
+# Auto detect text files and perform LF normalization
 * text=auto
 
-*.blade.php diff=html
-*.css diff=css
-*.html diff=html
-*.md diff=markdown
-*.php diff=php
-
-/.github export-ignore
-CHANGELOG.md export-ignore
+# Force shell scripts to always use LF
+*.sh text eol=lf
+Dockerfile text eol=lf
