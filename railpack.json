@@ -3,5 +3,13 @@
     "packages": {
         "php": "8.3"
     },
-    "phpExtensions": ["gd"]
+    "phpExtensions": ["gd", "mbstring", "pdo_mysql", "bcmath", "zip", "xml"],
+    "build": {
+        "cmds": [
+            "composer install --no-dev --optimize-autoloader --no-interaction"
+        ]
+    },
+    "deploy": {
+        "startCmd": "php artisan migrate --force && php artisan storage:link && php artisan serve --host=0.0.0.0 --port=$PORT"
+    }
 }
