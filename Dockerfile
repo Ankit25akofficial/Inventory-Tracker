@@ -22,10 +22,11 @@ RUN composer install --no-dev --optimize-autoloader --no-interaction
 # Setup storage directories and permissions
 RUN mkdir -p storage/framework/{sessions,views,cache,testing} \
              storage/logs bootstrap/cache \
-    && chmod -R 775 storage bootstrap/cache
+    && chmod -R 777 storage bootstrap/cache
+
+# Make startup script executable
+RUN chmod +x start.sh
 
 EXPOSE 8080
 
-CMD php artisan migrate --force \
-    && php artisan storage:link \
-    && php artisan serve --host=0.0.0.0 --port=${PORT:-8080}
+CMD ["bash", "start.sh"]
